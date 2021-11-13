@@ -90,9 +90,9 @@ const Chart = ({
               }}
             >
               <ChartYLabel format={formatUSD} style={styles.boldTitle} />
-              <View>
-                <Text style={[styles.title, { color: priceChangeColor }]}>
-                  {priceChangePercentage7d.toFixed(2)}%
+              <View style={{backgroundColor:priceChangeColor, borderRadius:5, padding:5}}>
+                <Text style={[styles.title, { color: "white" }]}>
+                {priceChangePercentage7d.toFixed(2)}%
                 </Text>
               </View>
             </View>
@@ -107,8 +107,8 @@ const Chart = ({
 
         {chartReady ? (
           <View style={styles.chartLineWrapper}>
-            <ChartPath height={SIZE / 2} stroke="black" width={SIZE} />
-            <ChartDot style={{ backgroundColor: "black" }} />
+            <ChartPath height={SIZE / 2} stroke={priceChangeColor} width={SIZE} strokeWidth={2} selectedStrokeWidth={4}/>
+            <ChartDot style={{ backgroundColor: "black"}} size={17} />
           </View>
         ) : null}
       </View>
@@ -152,7 +152,7 @@ const styles = StyleSheet.create({
     color: "black",
   },
   title: {
-    fontSize: 18,
+    fontSize: 15,
   },
   chartLineWrapper: {
     marginTop: 40,
