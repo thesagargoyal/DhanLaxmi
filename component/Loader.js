@@ -4,7 +4,6 @@ import Constants from "expo-constants";
 
 import BouncingPreloader from "react-native-bouncing-preloaders";
 
-import { Card } from "react-native-paper";
 
 export default function Loader() {
   return (
