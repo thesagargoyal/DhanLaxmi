@@ -175,19 +175,21 @@ export default function Coin() {
             </View>
             <View
               style={{
-                height: "25%",
+                height: "20%",
                 flexDirection: "row",
                 justifyContent: "space-between",
+                padding:5
               }}
             >
               <TouchableOpacity
                 style={{
                   width: "50%",
-                  backgroundColor: "blue",
+                  backgroundColor: "#0D68FE",
                   alignItems: "center",
                   justifyContent: "center",
                   borderRightWidth: 1,
                   borderColor: "white",
+                  borderRadius:25
                 }}
               >
                 <Text
@@ -200,13 +202,16 @@ export default function Coin() {
                 >
                   BUY
                 </Text>
+                
               </TouchableOpacity>
+              <View><Text> </Text></View>
               <TouchableOpacity
                 style={{
                   width: "50%",
-                  backgroundColor: "blue",
+                  backgroundColor: "#0D68FE",
                   alignItems: "center",
                   justifyContent: "center",
+                  borderRadius:25
                 }}
               >
                 <Text
