@@ -1,20 +1,16 @@
 import React from 'react';
 import { StyleSheet } from 'react-native';
+import { StatusBar } from 'expo-status-bar';
 import LogIn from './screens/LogIn';
+import SignUp from './screens/SignUp';
+import Coin from './screens/Coin';
 
 export default function App() {
   return (
     <>
-    <LogIn/>
+    <StatusBar style="dark" />
+    <Coin/>
     </>
   );
 }
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
