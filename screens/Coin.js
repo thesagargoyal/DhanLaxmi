@@ -84,8 +84,6 @@ export default function Coin() {
               <View
                 style={{
                   width: "50%",
-                  borderRightWidth: 1,
-                  borderColor: "#dbdbdb",
                   justifyContent: "space-evenly",
                   paddingRight: 10,
                 }}
@@ -95,6 +93,9 @@ export default function Coin() {
                     flexDirection: "row",
                     justifyContent: "space-between",
                     margin: 3,
+                    backgroundColor: "#E6E6E6",
+                    borderRadius: 8,
+                    padding: 7,
                   }}
                 >
                   <Text style={{ color: "grey" }}>Rank</Text>
@@ -107,6 +108,9 @@ export default function Coin() {
                     flexDirection: "row",
                     justifyContent: "space-between",
                     margin: 3,
+                    backgroundColor: "#E6E6E6",
+                    borderRadius: 8,
+                    padding: 7,
                   }}
                 >
                   <Text style={{ color: "grey" }}>Volume</Text>
@@ -119,6 +123,9 @@ export default function Coin() {
                     flexDirection: "row",
                     justifyContent: "space-between",
                     margin: 3,
+                    backgroundColor: "#E6E6E6",
+                    borderRadius: 8,
+                    padding: 7,
                   }}
                 >
                   <Text style={{ color: "grey" }}>ATH</Text>
@@ -130,7 +137,6 @@ export default function Coin() {
               <View
                 style={{
                   width: "50%",
-                  borderColor: "grey",
                   justifyContent: "space-evenly",
                   paddingLeft: 5,
                 }}
@@ -140,6 +146,9 @@ export default function Coin() {
                     flexDirection: "row",
                     justifyContent: "space-between",
                     margin: 3,
+                    backgroundColor: "#E6E6E6",
+                    borderRadius: 8,
+                    padding: 7,
                   }}
                 >
                   <Text style={{ color: "grey" }}>Market Cap</Text>
@@ -152,6 +161,9 @@ export default function Coin() {
                     flexDirection: "row",
                     justifyContent: "space-between",
                     margin: 3,
+                    backgroundColor: "#E6E6E6",
+                    borderRadius: 8,
+                    padding: 7,
                   }}
                 >
                   <Text style={{ color: "grey" }}>Total Supply</Text>
@@ -164,9 +176,12 @@ export default function Coin() {
                     flexDirection: "row",
                     justifyContent: "space-between",
                     margin: 3,
+                    backgroundColor: "#E6E6E6",
+                    borderRadius: 8,
+                    padding: 7,
                   }}
                 >
-                  <Text style={{ color: "grey" }}>Maximum Supply</Text>
+                  <Text style={{ color: "grey" }}>Max Supply</Text>
                   <Text style={{ fontWeight: "bold" }}>
                     {setNum(selectedCoinData?.max_supply)}
                   </Text>
@@ -187,7 +202,6 @@ export default function Coin() {
                   backgroundColor: "#0D68FE",
                   alignItems: "center",
                   justifyContent: "center",
-                  borderRightWidth: 1,
                   borderColor: "white",
                   borderRadius:25
                 }}
