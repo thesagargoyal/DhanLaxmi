@@ -20,7 +20,7 @@ export default function Loader() {
         leftDistance={-180}
         rightDistance={-250}
         speed={1200}
-        size={70}
+        size={80}
       />
     </View>
   );
