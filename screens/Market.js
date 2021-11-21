@@ -57,6 +57,7 @@ const Market = () => {
                     styles.btntab,
                     status === e.status && styles.btnTabActive,
                   ]}
+                  key={e.id}
                   onPress={() => setStatusFilter(e.status)}>
                   <Text style={{ fontSize: 12, fontWeight: 'bold' }}>
                     {e.status}
