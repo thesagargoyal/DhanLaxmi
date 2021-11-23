@@ -11,12 +11,13 @@ import Sell from './screens/Sell';
 import Market from './screens/Market';
 import News from './screens/News';
 import Loader from './component/Loader';
+import Home from './screens/Home';
 
 export default function App() {
   return (
     <>
     <StatusBar style="dark" />
-    <News/>
+    <Home/>
     </>
   );
 }

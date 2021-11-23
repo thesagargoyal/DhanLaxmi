@@ -5,7 +5,7 @@ import Constants from "expo-constants";
 import BouncingPreloader from "react-native-bouncing-preloaders";
 
 
-export default function Loader() {
+export default function Loader({sizeParam}) {
   return (
     <View style={styles.container}>
       <BouncingPreloader
@@ -20,7 +20,7 @@ export default function Loader() {
         leftDistance={-180}
         rightDistance={-250}
         speed={1200}
-        size={80}
+        size={sizeParam ? sizeParam : 80}
       />
     </View>
   );
