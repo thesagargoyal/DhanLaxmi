@@ -59,7 +59,7 @@ const styles = StyleSheet.create({
         flex: 1,
         backgroundColor: "white",
         paddingTop: Constants.statusBarHeight,
-        backgroundColor: "#0D68FE",
+        backgroundColor: "#F6FBFC",
     },
     headingContainer: {
         flex: 1,
@@ -70,9 +70,8 @@ const styles = StyleSheet.create({
         flex: 9,
     },
     newsHeading: {
-        color: "white",
-        fontSize: 45,
-        fontWeight: "bold",
+        color: "black",
+        fontSize: 40,
     },
     newsItemContainer: {
         margin: 10,
