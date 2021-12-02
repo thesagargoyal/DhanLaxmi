@@ -11,7 +11,9 @@ import { getMarketData } from "../services/cryptoService";
 import Constants from "expo-constants";
 import Loader from "../component/Loader";
 
-export default function Coin() {
+import firebase from "firebase";
+
+export default function Coin({route, navigation}) {
   const [selectedCoinData, setSelectedCoinData] = useState(null);
 
   var SI_SYMBOL = ["", "k", "M", "B", "T", "P", "E"];
@@ -35,12 +37,10 @@ export default function Coin() {
   }
 
   useEffect(() => {
-    const fetchMarketData = async () => {
-      const marketData = await getMarketData();
-      setSelectedCoinData(marketData[0]);
-    };
-    fetchMarketData();
+    const { coinData } = route.params;
+    setSelectedCoinData(coinData);
   }, []);
+
 
   return (
     <SafeAreaView style={styles.container}>
@@ -48,7 +48,7 @@ export default function Coin() {
         <>
           <View style={{ width: "100%" }}>
             <Text
-              style={{ textAlign: "center", fontSize: 30, fontWeight: "bold" }}
+              style={{ textAlign: "center", fontSize: 25, fontWeight: "bold" }}
             >
               {selectedCoinData?.name}/{selectedCoinData?.symbol}
             </Text>
@@ -203,8 +203,10 @@ export default function Coin() {
                   alignItems: "center",
                   justifyContent: "center",
                   borderColor: "white",
-                  borderRadius:25
+                  borderRadius:25,
+                  paddingVertical:20
                 }}
+                onPress={() =>{navigation.push("Buy")}}
               >
                 <Text
                   style={{
@@ -225,8 +227,10 @@ export default function Coin() {
                   backgroundColor: "#0D68FE",
                   alignItems: "center",
                   justifyContent: "center",
-                  borderRadius:25
+                  borderRadius:25,
+                  paddingVertical:20
                 }}
+                onPress={() =>{navigation.push("Sell")}}
               >
                 <Text
                   style={{
@@ -254,6 +258,7 @@ const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: "white",
     paddingTop: Constants.statusBarHeight,
+    paddingBottom: 85,
   },
   titleWrapper: {
     marginTop: 20,

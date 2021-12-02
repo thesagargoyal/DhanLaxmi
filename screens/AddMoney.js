@@ -49,7 +49,7 @@ const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: "white",
     paddingTop: Constants.statusBarHeight,
-    margin: 10,
+    paddingBottom: 40
   },
   container: {
     flex: 4,

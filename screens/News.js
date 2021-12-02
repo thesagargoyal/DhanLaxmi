@@ -60,6 +60,7 @@ const styles = StyleSheet.create({
         backgroundColor: "white",
         paddingTop: Constants.statusBarHeight,
         backgroundColor: "#F6FBFC",
+        marginBottom: 70
     },
     headingContainer: {
         flex: 1,

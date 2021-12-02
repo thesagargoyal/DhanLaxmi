@@ -12,7 +12,7 @@ import HomeTopMovers from "./HomeTopMovers";
 import HomeWatch from "./HomeWatch";
 import axios from "axios";
 
-const Home = () => {
+const Home = ({navigation}) => {
   const [globalData, setGlobalData] = useState({});
 
   var SI_SYMBOL = ["", "k", "M", "B", "T", "P", "E"];
@@ -50,9 +50,9 @@ const Home = () => {
 
   return (
     <SafeAreaView
-      style={{ flex: 1, backgroundColor: "white", marginBottom: 90 }}
+      style={{ flex: 1, backgroundColor: "white" }}
     >
-      <ScrollView style={{ flex: 1 }}>
+      <ScrollView style={{ flex: 1, marginBottom:70 }}>
         <View>
           <View
             style={{
@@ -79,7 +79,7 @@ const Home = () => {
               Make your first investment today
             </Text>
             <View style={{ paddingTop: 30 }}>
-              <TouchableOpacity style={styles.appButtonContainer}>
+              <TouchableOpacity style={styles.appButtonContainer} onPress={() => {navigation.push("AddMoney")}}>
                 <Text
                   style={{
                     fontSize: 16,
@@ -94,7 +94,7 @@ const Home = () => {
             </View>
           </View>
           <View style={{ paddingTop: 50, paddingHorizontal: 20 }}>
-            <Text style={{fontWeight: "bold", fontSize:22, paddingBottom:7}}>Gloabl Stats</Text>
+            <Text style={{fontWeight: "bold", fontSize:22, paddingBottom:7}}>Global Stats</Text>
             {globalData ? (
               <View
                 style={{
@@ -104,43 +104,43 @@ const Home = () => {
                   padding: 25,
                 }}
               >
-                <View style={styles.stats}>
-                  <Text style={styles.statsTitle}>Active Cryptos: </Text>
+                <TouchableOpacity style={styles.stats} onPress={() =>{navigation.push("ActiveCryptos")}}>
+                  <Text style={styles.statsTitle}>Active Cryptos </Text>
                   <Text style={styles.statsData}>{globalData?.active_cryptocurrencies}</Text>
-                </View>
-                <View style={styles.stats}>
-                  <Text style={styles.statsTitle}>Active Exchanges:</Text>
+                </TouchableOpacity>
+                <TouchableOpacity style={styles.stats} onPress={() =>{navigation.push("ActiveExchanges")}}>
+                  <Text style={styles.statsTitle}>Active Exchanges</Text>
                   <Text style={styles.statsData}>{globalData?.active_exchanges}</Text>
-                </View>
-                <View style={styles.stats}>
-                  <Text style={styles.statsTitle}>BTC Dominance: </Text>
+                </TouchableOpacity>
+                <TouchableOpacity style={styles.stats}>
+                  <Text style={styles.statsTitle}>BTC Dominance </Text>
                   <Text style={styles.statsData}>
                     {String(globalData?.btc_dominance).substring(0, 5)}%
                   </Text>
-                </View>
-                <View style={styles.stats}>
-                  <Text style={styles.statsTitle}>ETH Dominance: </Text>
+                </TouchableOpacity>
+                <TouchableOpacity style={styles.stats}>
+                  <Text style={styles.statsTitle}>ETH Dominance </Text>
                   <Text style={styles.statsData}>
                     {String(globalData?.eth_dominance).substring(0, 5)}%
                   </Text>
-                </View>
-                <View style={styles.stats}>
-                  <Text style={styles.statsTitle}>Total Market Cap: </Text>
+                </TouchableOpacity>
+                <TouchableOpacity style={styles.stats}>
+                  <Text style={styles.statsTitle}>Total Market Cap </Text>
                   <Text style={styles.statsData}>{setNum(globalData?.quote?.USD?.total_market_cap)} $</Text>
-                </View>
-                <View style={styles.stats}>
-                  <Text style={styles.statsTitle}>Total Volume 24H: </Text>
+                </TouchableOpacity>
+                <TouchableOpacity style={styles.stats}>
+                  <Text style={styles.statsTitle}>Total Volume 24H </Text>
                   <Text style={styles.statsData}>{setNum(globalData?.quote?.USD?.total_volume_24h)}</Text>
-                </View>
+                </TouchableOpacity>
               </View>
             ) : (
               <Text style={{textAlign:"center"}}>Loading</Text>
             )}
           </View>
-          <View style={{ paddingTop: 50, paddingHorizontal: 20 }}>
+          <View style={{ paddingTop: 50, marginBottom:10, marginLeft:5}}>
             <HomeWatch />
           </View>
-          <View style={{ paddingTop: 50, paddingHorizontal: 20 }}>
+          <View style={{ paddingTop: 50, marginBottom:10, marginLeft:5}}>
             <HomeTopMovers />
           </View>
         </View>

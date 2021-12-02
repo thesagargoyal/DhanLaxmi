@@ -32,7 +32,8 @@ const HomeTopMovers = () => {
           fontSize: 20,
           fontWeight: "bold",
           color: "black",
-          paddingTop: 50,
+          paddingTop: 10,
+          paddingHorizontal:20
         }}
       >
         Top Trending Coins
@@ -96,7 +97,7 @@ const HomeTopMovers = () => {
           ))}
         </ScrollView>
       ) : (
-        <Text>Loading...</Text>
+        <Text style={{fontWeight:"bold", fontSize:15, paddingLeft: 15 }}>Loading...</Text>
       )}
     </View>
   );

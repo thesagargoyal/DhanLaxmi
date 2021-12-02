@@ -8,54 +8,44 @@ import {
   TouchableOpacity,
   SafeAreaView,
   ScrollView,
+  Linking
 } from "react-native";
 import axios from "axios";
-import { TextInput } from "react-native-paper";
 import Loader from "../component/Loader";
 
-import { getMarketData } from "../services/cryptoService";
 
-const Market = ({navigation}) => {
+const Exchanges = ({navigation}) => {
   const [data, setData] = useState([]);
-  const [searchItem, setSearchItem] = useState("");
 
   useEffect(() => {
 
-      const fetchMarketData = async () => {
-        const marketData = await getMarketData();
-        setData(marketData);
-      };
-      fetchMarketData();
+    axios
+      .get(
+        `https://api.coingecko.com/api/v3/exchanges`
+      )
+      .then(function (response) {
+        setData(response.data);
+      })
+      .catch(function (error) {
+        console.log(error);
+      });
 
   }, []);
 
-  useEffect(() => {
-    const filteredData = data?.filter((coin) =>
-      coin.id.toLowerCase().includes(searchItem.toLowerCase())
-    );
-    setData(filteredData);
-  }, [searchItem]);
-
   return (
     <SafeAreaView style={styles.container}>
-      <View style={{ margin: 20, flex: 1 }}>
-        <TextInput
-          mode="outlined"
-          label="Search..."
-          value={searchItem}
-          onChangeText={(text) => setSearchItem(text)}
-          theme={{ colors: { primary: "blue" } }}
-        />
+      <View style={{ margin: 20, flex:0.6, alignItems: "center", justifyContent:"center", paddingTop:5}}>
+        <Text style={{textAlign: "center", fontWeight: "bold", fontSize:30, }}>Top 100 Excahnges</Text>
       </View>
       {data.length == 0 ? (
-        <View style={{ flex: 9 }}>
+    <View style={{ flex: 9.4 }}>
           <Loader sizeParam={60} />
         </View>
       ) : (
         <View style={{ flex: 9, marginBottom:70 }}>
           <ScrollView style={{ paddingHorizontal: 20 }}>
-            {data?.map((coin) => (
-              <TouchableOpacity key={coin.id} onPress={() => navigation.push("Coin", { coinData :coin})}>
+            {data?.map((exchange) => (
+              <TouchableOpacity key={exchange.id} onPress={() =>{Linking.openURL(exchange.url)}}>
                 <View
                   style={{
                     paddingVertical: 20,
@@ -65,7 +55,7 @@ const Market = ({navigation}) => {
                 >
                   <View>
                     <Image
-                      source={{ uri: coin.image }}
+                      source={{ uri: exchange.image }}
                       style={{
                         width: 32,
                         height: 32,
@@ -74,12 +64,12 @@ const Market = ({navigation}) => {
                   </View>
                   <View style={{ flex: 1, paddingLeft: 15 }}>
                     <Text style={{ fontSize: 17, fontWeight: "400" }}>
-                      {coin.name}
+                      {exchange.name}
                     </Text>
                   </View>
                   <View style={{ paddingLeft: 15}}>
-                    <Text style={{ fontSize: 16, fontWeight: "400" }}>
-                      ${coin.current_price}
+                    <Text style={{ fontSize: 16, fontWeight: "bold" }}>
+                      #{exchange.trust_score_rank}
                     </Text>
                   </View>
                 </View>
@@ -113,4 +103,5 @@ const styles = StyleSheet.create({
   },
 });
 
-export default Market;
+export default Exchanges;
+
