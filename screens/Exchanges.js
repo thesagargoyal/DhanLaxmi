@@ -35,7 +35,7 @@ const Exchanges = ({navigation}) => {
   return (
     <SafeAreaView style={styles.container}>
       <View style={{ margin: 20, flex:0.6, alignItems: "center", justifyContent:"center", paddingTop:5}}>
-        <Text style={{textAlign: "center", fontWeight: "bold", fontSize:30, }}>Top 100 Excahnges</Text>
+        <Text style={{textAlign: "center", fontWeight: "bold", fontSize:30, }}>Top 100 Exchanges</Text>
       </View>
       {data.length == 0 ? (
     <View style={{ flex: 9.4 }}>

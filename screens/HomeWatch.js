@@ -84,8 +84,9 @@ const HomeWatch = () => {
           style={{ paddingTop: 20 }}
         >
           {filteredCoins.map((coin) => (
-            <View key={coin.id}>
+    
               <View
+                key={coin.id}
                 style={{
                   width: 150,
                   height: 170,
@@ -93,7 +94,6 @@ const HomeWatch = () => {
                   borderColor: "#ddd",
                   borderRadius: 10,
                   marginRight: 15,
-                  paddingHorizontal: 15,
                 }}
               >
                 <View style={{alignItems:"center"}}>
@@ -116,26 +116,26 @@ const HomeWatch = () => {
                       fontWeight: "bold",
                     }}
                   >
-                   #{coin.market_cap_rank} {coin.symbol}
+                   #{coin.market_cap_rank} {coin.symbol.toUpperCase()}
                   </Text>
                   <Text style={{paddingTop:5, fontWeight: "bold", color: getColor(coin.price_change_percentage_7d_in_currency.toFixed(2))}}>
                     {coin.price_change_percentage_7d_in_currency.toFixed(2)>0 ? "+":""}{coin.price_change_percentage_7d_in_currency.toFixed(2)} %
                   </Text>
                   <Text
                     style={{
-                      fontSize: 16,
+                      fontSize: 12,
                       fontWeight: "bold",
                       paddingTop: 5,
                     }}
                   >
                     {coin.name}
                   </Text>
-                  <Text style={{fontSize:15, fontWeight: "bold"}}>
+                  <Text style={{fontSize:13, fontWeight: "bold"}}>
                     $ {coin.current_price} 
                   </Text>
                 </View>
               </View>
-            </View>
+      
           ))}
         </ScrollView>
       ) : (
