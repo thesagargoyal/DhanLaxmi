@@ -40,7 +40,7 @@ const Chart = ({
   const priceChangeColor = priceChangePercentage7d > 0 ? "#34C759" : "#FF3B30";
 
   const starChangeColor = starred ? "yellow" : "white";
-  const starChangeBorder = starred ? 0.0 : 0.0;
+  const starChangeBorder = 0.4;
 
 
   useEffect(() => {
@@ -158,13 +158,13 @@ const Chart = ({
                     style={{
                       backgroundColor: starChangeColor,
                       marginLeft: 10,
-                      borderRadius: 10,
+                      borderRadius: 14,
                       borderWidth: starChangeBorder,
                     }}
                     onPress={() => checkStar()}
                   >
                     <Image
-                      style={{ height: 25, width: 25 }}
+                      style={{ height: 25, width: 25, margin: 1 }}
                       source={require(`../assets/star.png`)}
                     ></Image>
                   </TouchableOpacity>

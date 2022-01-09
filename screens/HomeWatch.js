@@ -81,7 +81,7 @@ const HomeWatch = () => {
         <ScrollView
           horizontal
           showsHorizontalScrollIndicator={false}
-          style={{ paddingTop: 20 }}
+          style={{ paddingTop: 10 }}
         >
           {filteredCoins.map((coin) => (
     

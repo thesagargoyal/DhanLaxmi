@@ -258,7 +258,7 @@ const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: "white",
     paddingTop: Constants.statusBarHeight,
-    paddingBottom: 85,
+    paddingBottom: 89,
   },
   titleWrapper: {
     marginTop: 20,

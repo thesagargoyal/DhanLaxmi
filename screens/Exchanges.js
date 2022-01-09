@@ -42,7 +42,7 @@ const Exchanges = ({navigation}) => {
           <Loader sizeParam={60} />
         </View>
       ) : (
-        <View style={{ flex: 9, marginBottom:70 }}>
+        <View style={{ flex: 9, marginBottom:77 }}>
           <ScrollView style={{ paddingHorizontal: 20 }}>
             {data?.map((exchange) => (
               <TouchableOpacity key={exchange.id} onPress={() =>{Linking.openURL(exchange.url)}}>

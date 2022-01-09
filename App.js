@@ -27,12 +27,13 @@ import { LogBox } from 'react-native';
 LogBox.ignoreLogs([`Can't perform a React state update on an unmounted component`]);
 
 const firebaseConfig = {
-  apiKey: "AIzaSyDagZBc_TKZItF3N4hshnmx5aTcpx8Ckqg",
-  authDomain: "dhanlaxmi-5b718.firebaseapp.com",
-  projectId: "dhanlaxmi-5b718",
-  storageBucket: "dhanlaxmi-5b718.appspot.com",
-  messagingSenderId: "1034387740459",
-  appId: "1:1034387740459:web:c0430e8fa340329c6d976e",
+  apiKey: "AIzaSyCqJGwSrm2VPjj6GYN_RRgEKUE3uMTb_zo",
+  authDomain: "dhanlaxminew-36ddd.firebaseapp.com",
+  databaseURL: "https://dhanlaxminew-36ddd-default-rtdb.firebaseio.com",
+  projectId: "dhanlaxminew-36ddd",
+  storageBucket: "dhanlaxminew-36ddd.appspot.com",
+  messagingSenderId: "258662593110",
+  appId: "1:258662593110:web:6240c198e245631eea01f7"
 };
 
 if (firebase.apps.length === 0) {
@@ -50,8 +51,10 @@ export default function App() {
             position: "absolute",
             elevation: 5,
             backgroundColor: "white",
-            borderRadius: 15,
+            borderRadius: 45,
             height: 70,
+            marginBottom:7,
+            marginHorizontal:10
           },
         }}
       >

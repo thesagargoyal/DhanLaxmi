@@ -160,7 +160,7 @@ const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: "#F6FBFC",
     paddingTop: Constants.statusBarHeight,
-    paddingBottom: 70
+    paddingBottom: 77
   },
   container: {
     flex: 2.5,
