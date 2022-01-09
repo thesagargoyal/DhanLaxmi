@@ -11,7 +11,7 @@ const News = () => {
 
     useEffect(() => {
         axios
-            .get(`https://newsapi.org/v2/everything?q=Crypto&from=2021-11-21&sortBy=popularity&apiKey=96d7d0ca87d4476fbcdaca55c30924ed`)
+            .get(`https://newsapi.org/v2/everything?q=Crypto&sortBy=popularity&apiKey=1ff4ef8d1866448791baed85c13365f6`)
             .then(function (response) {
                 setNewsData(response.data.articles);
             })
@@ -60,7 +60,7 @@ const styles = StyleSheet.create({
         backgroundColor: "white",
         paddingTop: Constants.statusBarHeight,
         backgroundColor: "#F6FBFC",
-        marginBottom: 70
+        paddingBottom:77
     },
     headingContainer: {
         flex: 1,

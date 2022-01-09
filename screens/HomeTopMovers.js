@@ -42,7 +42,7 @@ const HomeTopMovers = () => {
         <ScrollView
           horizontal
           showsHorizontalScrollIndicator={false}
-          style={{ paddingTop: 20 }}
+          style={{ paddingTop: 10 }}
         >
           {coins.map((coin) => (
             <View key={coin.item.coin_id}>

@@ -47,7 +47,7 @@ const Home = ({navigation}) => {
     <SafeAreaView
       style={{ flex: 1, backgroundColor: "white" }}
     >
-      <ScrollView style={{ flex: 1, marginBottom:70 }}>
+      <ScrollView style={{ flex: 1, marginBottom:77 }}>
         <View>
           <View
             style={{

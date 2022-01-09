@@ -22,9 +22,9 @@ const Portfolio = () => {
   }, []);
   return (
     <SafeAreaView style={{ flex: 1, backgroundColor: "white" }}>
-      <ScrollView style={{ flex: 1 }}>
+      <ScrollView style={{ flex: 1, marginBottom:77 }}>
         <View
-          style={{ paddingTop: 50, paddingHorizontal: 20, marginBottom: 90 }}
+          style={{ paddingTop: 50, paddingHorizontal: 20 }}
         >
           <Text style={{ color: "#5d616f", fontSize: 14, fontWeight: "500" }}>
             Portfolio Balance
